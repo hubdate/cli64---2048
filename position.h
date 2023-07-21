@@ -209,8 +209,8 @@ class Position {
         row_t                   reverse(row_t) const;                               // Reverse/Mirror a 16-bits integer
         position_t              transpose(position_t) const;                        // Transpose a given 64-bits integer
 
-        int                     empty_tiles(position_t) const;                      // Return the number of 0's 4-bits nibbles on a 64-bits integer
-        int                     distinct_tiles(position_t) const;                   // Return the number of distinct 4-bits nibbles on a 64-bits integer
+        int                     count_empty_tiles(position_t) const;                      // Return the number of 0's 4-bits nibbles on a 64-bits integer
+        int                     count_distinct_tiles(position_t) const;                   // Return the number of distinct 4-bits nibbles on a 64-bits integer
         float                   get_score(position_t, const float *) const;         // Return the score of a board based on a given score array
         float                   evaluate(state_t &, position_t, float) const;       // Return the heuristic score of a board (64-bits integer), recursively with get_bestmove() method
         float                   get_bestmove(state_t &, position_t, float) const;   // Return the heuristic score of a board (64-bits integer), recursively with evaluate()     method

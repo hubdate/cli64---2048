@@ -124,7 +124,7 @@ Position::Position() {
  */
 Position::position_t Position::unpack(Position::row_t r) const {
     position_t _ = r;
-    return (_ | _<<12ULL | _<<24ULL | _<<36) & COLUMN_MASK;
+    return (_ | _<<12ULL | _<<24ULL | _<<36ULL) & COLUMN_MASK;
 }
 
 /** 
@@ -228,7 +228,7 @@ Position::position_t Position::transpose(Position::position_t m) const{
  * /!\ Revisionned, accept empty board...
  * 
  */
-int Position::empty_tiles(position_t m) const {
+int Position::count_empty_tiles(position_t m) const {
     if (!m) { return 0x10; }
 
     m =  ((m >> 2) | m) & 0x3333333333333333ULL;
@@ -246,7 +246,7 @@ int Position::empty_tiles(position_t m) const {
  * Count the number of distinct cells  in a board.
  * 
  */
-int Position::distinct_tiles(Position::position_t m) const {
+int Position::count_distinct_tiles(Position::position_t m) const {
     uint16_t bitset = 0;
     while (m) {
         bitset |= 1<<(m & 0xf);
@@ -361,7 +361,7 @@ Position::position_t Position::set_gravity_down(Position::position_t m) const {
 
 
 Position::position_t Position::spawn_tile(Position::position_t board) const {
-    int location = PRNG_UD(empty_tiles(board));
+    int location = PRNG_UD(count_empty_tiles(board));
     position_t __explorer = board;
     position_t __tile = (PRNG_UD(10) < 9) ? 0x1ULL : 0x2ULL;
 
@@ -405,7 +405,7 @@ float Position::evaluate(Position::state_t &state, Position::position_t board, f
         }
     }
 
-    int nullcells = empty_tiles(board);
+    int nullcells = count_empty_tiles(board);
     cprob /= nullcells;
 
     float __heuristic = 0.0f;
@@ -479,7 +479,7 @@ int Position::predict(Position::position_t board, bool logs) const {
         Position::state_t __state;
         std::chrono::time_point<std::chrono::high_resolution_clock> counter_dummy, counter_stamp;
 
-        __state.limit_depth = std::max(3, distinct_tiles(board) - 2);
+        __state.limit_depth = std::max(3, count_distinct_tiles(board) - 2);
 
         counter_dummy = std::chrono::high_resolution_clock::now();
         if ((this->*moves[move])(board) != board) { __score = evaluate(__state, (this->*moves[move])(board), 1.0f) + 1e-6; }
