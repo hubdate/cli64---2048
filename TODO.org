@@ -1,0 +1,55 @@
+#+TITLE: org-trello development backlog
+#+AUTHOR: ardumont
+#+STYLE: <style> h1,h2,h3 {font-family: arial, helvetica, sans-serif} </style>
+
+** Features
+
+** Documentation
+
+** Uncertainty
+
+** Need feedback
+
+* TODO 0.0.2 [0%] [0/]
+OPENED: [2023-07-20 Thu 23:34]
+- [ ] Add __dosctring__ on all functions [0/0]
+    - [ ] Position::Position (constructor)
+    - [ ] Position::unpack
+    - [ ] Position::reverse
+    - [ ] Position::transpose
+    - [ ] Position::empty_tiles
+    - [ ] Position::distinct_tiles
+    - [ ] Position::highest_tile
+    - [ ] Position::get_score
+    - [ ] Position::get_scores
+    - [ ] Position::__set_gravity_right
+    - [ ] Position::__set_gravity_up
+    - [ ] Position::__set_gravity_left
+    - [ ] Position::__set_gravity_down
+    - [ ] Position::evaluate
+    - [ ] Position::get_bestmove
+    - [ ] Position::predict
+
+* DONE 0.0.1 [100%] [2/2]
+OPENED: [2023-07-20 Thu 10:07]
+CLOSED: [2023-07-20 Thu 23:34]
+- [ ] Add the class Position [16/16]
+    - [x] Position::Position (constructor)
+    - [x] Position::unpack
+    - [x] Position::reverse
+    - [x] Position::transpose
+    - [x] Position::empty_tiles
+    - [x] Position::distinct_tiles
+    - [x] Position::highest_tile
+    - [x] Position::get_score
+    - [x] Position::get_scores
+    - [x] Position::__set_gravity_right
+    - [x] Position::__set_gravity_up
+    - [x] Position::__set_gravity_left
+    - [x] Position::__set_gravity_down
+    - [x] Position::evaluate
+    - [x] Position::get_bestmove
+    - [x] Position::predict
+- [x] Add Macro [2/2]
+    - [x] GET_EPOCH_TIME, is designed to provide a timestamp in a human-readable format. It returns the elapsed time since the __BIG_BANG__ time point (measured in us). 
+    - [x] PRNG_UD, Pseudo Random Number Generator Uniformly Distributed (PRNG_UD)
