@@ -1,5 +1,5 @@
-#+TITLE: org-trello development backlog
-#+AUTHOR: ardumont
+#+TITLE:  cli64 - 2048 development backlog
+#+AUTHOR: hubdate
 #+STYLE: <style> h1,h2,h3 {font-family: arial, helvetica, sans-serif} </style>
 
 ** Features
