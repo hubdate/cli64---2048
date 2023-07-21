@@ -11,7 +11,7 @@
 ** Need feedback
 
 * TODO 0.0.3 [50%] [1/2]
-- [ ] Add __dosctring__ [1/2]
+- [ ] Add __dosctring__ [0/16]
     - [ ] public
         - [ ] Position::set_gravity_right
         - [ ] Position::set_gravity_up
