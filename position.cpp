@@ -415,8 +415,8 @@ float Position::evaluate(Position::state_t &state, Position::position_t board, f
 
     while (__cell_2) {
         if ((__explorer & 0xFULL) == 0) {
-            __heuristic += get_bestmove(state, board | __cell_2, cprob * 0.9f) * 0.9f;
-            __heuristic += get_bestmove(state, board | __cell_4, cprob * 0.1f) * 0.1f;
+            __heuristic += get_best_heuristic(state, board | __cell_2, cprob * 0.9f) * 0.9f;
+            __heuristic += get_bestmove_heuristic(state, board | __cell_4, cprob * 0.1f) * 0.1f;
         }
         __explorer >>= 4;
         __cell_2   <<= 4;
@@ -437,7 +437,7 @@ float Position::evaluate(Position::state_t &state, Position::position_t board, f
 }
 
 
-float Position::get_bestmove(Position::state_t &state, Position::position_t board, float cprob) const {
+float Position::get_best_heuristic(Position::state_t &state, Position::position_t board, float cprob) const {
     float __best = 0.0f;
     state.current_depth++;
 

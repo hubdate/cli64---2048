@@ -100,3 +100,14 @@ int main() {
 
     printf("\n[%12s] %-10s\n", GET_EPOCH_TIME, __FUNCTION__);
 */
+
+/*
+// Test section
+int main() {
+    Position game;
+    Position::position_t board = 0x000D5000001AE008ULL;
+
+    printf("[x] board.get_scores(m)[0]              :  %f\n", game.get_scores(board)[0]  );
+    return 0;
+}
+*/
