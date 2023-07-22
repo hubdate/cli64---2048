@@ -140,9 +140,9 @@ class Position {
 
         int                     highest_vtiles(position_t) const;                   // Return the board highest tile value
         
-        int                     predict(position_t, bool) const;                    // Return the best move [indexed] for a given board
-        position_t              spawn_tile(position_t) const;                       // Return the board with a new tile randomly added (2 or 4)
         std::array<float, 2>    get_scores(position_t) const;                       // Return both heuristic and game score of a board
+        position_t              spawn_tile(position_t) const;                       // Return the board with a new tile randomly added (2 or 4)
+        int                     predict(position_t, bool) const;                    // Return the best move [indexed] for a given board
 
         Position();                                                                 // Constructor
 
